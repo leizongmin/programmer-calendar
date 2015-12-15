@@ -1,6 +1,6 @@
 {
   "name": "programmer-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "程序员老黄历命令行版",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/leizongmin/programmer-calendar#readme",
   "dependencies": {
-    "cli-color": "^1.1.0",
-    "debug": "^2.2.0"
+    "cli-color": "^1.1.0"
   },
   "engines": {
     "node": ">= 4.0.0"
