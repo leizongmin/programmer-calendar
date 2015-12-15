@@ -1,6 +1,8 @@
 # programmer-calendar
 命令行版程序员老黄历
 
+![image](https://cloud.githubusercontent.com/assets/841625/11815171/8687b8f6-a385-11e5-988f-82d540091eed.png)
+
 ## 安装
 
 ```bash
@@ -16,10 +18,6 @@ $ programmer-calendar
 ```
 
 **可将其设置为启动Shell时自动执行**
-
-效果如下：
-
-![image](https://cloud.githubusercontent.com/assets/841625/11803313/aafbc336-a334-11e5-9e4f-2e2380a371c7.png)
 
 ## License
 
