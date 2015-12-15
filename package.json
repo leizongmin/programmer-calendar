@@ -1,6 +1,6 @@
 {
   "name": "programmer-calendar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "程序员老黄历命令行版",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
     "node": ">= 4.0.0"
   },
   "bin": {
-    "programmer-calendar": "./bin/calendar"
+    "programmer-calendar": "./bin/calendar.js"
   }
 }
