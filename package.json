@@ -1,0 +1,29 @@
+{
+  "name": "programmer-calendar",
+  "version": "0.0.1",
+  "description": "程序员老黄历命令行版",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leizongmin/programmer-calendar.git"
+  },
+  "author": "Zongmin Lei <leizongmin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leizongmin/programmer-calendar/issues"
+  },
+  "homepage": "https://github.com/leizongmin/programmer-calendar#readme",
+  "dependencies": {
+    "cli-color": "^1.1.0",
+    "debug": "^2.2.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "bin": {
+    "programmer-calendar": "./bin/calendar"
+  }
+}
