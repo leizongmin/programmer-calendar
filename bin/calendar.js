@@ -16,6 +16,13 @@ const calendar = require('../lib/calendar');
 
 const screenWidth = process.stdout.columns;
 const screenHeight = process.stdout.rows;
+const printWidth = 80;
+const printWidthHalf = printWidth / 2;
+const printOffsetLeft = parseInt((screenWidth - printWidth) / 2);
+
+function print(str) {
+  console.log(take(printOffsetLeft, ' ') + str);
+}
 
 function take(n, s) {
   let r = '';
@@ -44,7 +51,7 @@ function fix(str, len, S) {
 }
 
 function L(str, S) {
-  console.log(fix(str, 80, S));
+  print(fix(str, printWidth, S));
 }
 
 function S1(str) {
@@ -69,18 +76,18 @@ function S5(str) {
 
 
 L(S1(''), S1);
-L(S1(calendar.getTodayString()), S1);
+L(S1('    ' + calendar.getTodayString()), S1);
 L(S1(''), S1);
-L(S1('座位朝向：面向' + clc.green(calendar.getDirectionString()) + '写程序，BUG 最少。'), S1);
-L(S1('今日宜饮：' + calendar.getDrinkString()), S1);
-L(S1('女神亲近指数：' + clc.xterm(205)(calendar.getStarString())), S1);
+L(S1('    座位朝向：面向' + clc.green(calendar.getDirectionString()) + '写程序，BUG 最少。'), S1);
+L(S1('    今日宜饮：' + calendar.getDrinkString()), S1);
+L(S1('    女神亲近指数：' + clc.xterm(205)(calendar.getStarString())), S1);
 L(S1(''), S1);
 
 let lucks = calendar.pickTodaysLuck();
 let luckLength = Math.max(lucks.good.length, lucks.bad.length);
 let middleIndex = parseInt(luckLength / 2 + 0.5);
 
-console.log(fix(S3('    '), 40, S2) + fix(S5('    '), 40, S4));
+print(fix(S3('    '), printWidthHalf, S2) + fix(S5('    '), printWidthHalf, S4));
 
 for (let i = 0; i < luckLength; i++) {
   let good = lucks.good[i] || {name: '', good: ''};
@@ -97,13 +104,13 @@ for (let i = 0; i < luckLength; i++) {
     right = S5('    ');
   }
 
-  left = fix(left + S2('  ' + clc.xterm(0)(good.name)), 40, S2);
-  right = fix(right + S4('  ' + clc.xterm(0)(bad.name)), 40, S4);
-  console.log(left + right);
+  left = fix(left + S2('  ' + clc.xterm(0)(good.name)), printWidthHalf, S2);
+  right = fix(right + S4('  ' + clc.xterm(0)(bad.name)), printWidthHalf, S4);
+  print(left + right);
 
-  left = fix(S3('    ') + S2('    ' + clc.xterm(240)(good.good)), 40, S2);
-  right = fix(S5('    ') + S4('    ' + clc.xterm(240)(bad.bad)), 40, S4);
-  console.log(left + right);
+  left = fix(S3('    ') + S2('    ' + clc.xterm(240)(good.good)), printWidthHalf, S2);
+  right = fix(S5('    ') + S4('    ' + clc.xterm(240)(bad.bad)), printWidthHalf, S4);
+  print(left + right);
 }
 
-console.log(fix(S3('    '), 40, S2) + fix(S5('    '), 40, S4));
+print(fix(S3('    '), printWidthHalf, S2) + fix(S5('    '), printWidthHalf, S4));
