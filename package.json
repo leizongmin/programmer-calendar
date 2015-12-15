@@ -1,6 +1,6 @@
 {
   "name": "programmer-calendar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "程序员老黄历命令行版",
   "main": "index.js",
   "scripts": {
