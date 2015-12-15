@@ -7,11 +7,16 @@
  * 本程序灵感来源于 http://sandbox.runjs.cn/show/ydp3it7b
  * 部分代码也来自该项目
  *
+ * 佛祖图案来源于 https://github.com/ottomao/bugfreejs
+ *
  * @author Zongmin Sei <leizongmin@gmail.com>
  */
 
+const path = require('path');
+const fs = require('fs');
 const clc = require('cli-color');
 const calendar = require('../lib/calendar');
+const bugfree = fs.readFileSync(path.resolve(__dirname, '../lib/bugfree.txt')).toString().split(/\r?\n/);
 
 
 const screenWidth = process.stdout.columns;
@@ -54,6 +59,10 @@ function L(str, S) {
   print(fix(str, printWidth, S));
 }
 
+function S0(str) {
+  return clc.xterm(227).bgXterm(0)(str);
+}
+
 function S1(str) {
   return clc.xterm(0).bgXterm(250)(str);
 }
@@ -74,13 +83,19 @@ function S5(str) {
   return clc.xterm(0).bgXterm(196)(str);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
+let offsetLeft = '                 ';
+for (let str of bugfree) {
+  print(fix(S0(offsetLeft + str), printWidth, S0));
+}
 
 L(S1(''), S1);
-L(S1('    ' + calendar.getTodayString()), S1);
+L(S1(offsetLeft + '    ' + calendar.getTodayString()), S1);
 L(S1(''), S1);
-L(S1('    座位朝向：面向' + clc.green(calendar.getDirectionString()) + '写程序，BUG 最少。'), S1);
-L(S1('    今日宜饮：' + calendar.getDrinkString()), S1);
-L(S1('    女神亲近指数：' + clc.xterm(205)(calendar.getStarString())), S1);
+L(S1(offsetLeft +  '    座位朝向：面向' + clc.green(calendar.getDirectionString()) + '写程序，BUG 最少。'), S1);
+L(S1(offsetLeft +  '    今日宜饮：' + calendar.getDrinkString()), S1);
+L(S1(offsetLeft +  '    女神亲近指数：' + clc.xterm(205)(calendar.getStarString())), S1);
 L(S1(''), S1);
 
 let lucks = calendar.pickTodaysLuck();
