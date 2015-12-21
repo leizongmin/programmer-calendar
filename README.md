@@ -17,7 +17,11 @@ $ npm install -g programmer-calendar
 $ programmer-calendar
 ```
 
-**可将其设置为启动Shell时自动执行**
+**可将其设置为启动Shell时自动执行，建议终端窗口尺寸不小于 100x40**
+
+## 更新数据
+
+文件`lib/define.json`，`activities`中的`good`和`bad`每项文字长度不超过**16**，`name`不超过**17**
 
 ## License
 
