@@ -130,6 +130,11 @@
     "weekend": true
   }],
   "specials": [{
+    "date": 20151224,
+    "type": "good",
+    "name": "待在男（女）友身边",
+    "description": "今天晚上不要加班了吧？"
+  }, {
     "date": 20160214,
     "type": "bad",
     "name": "待在男（女）友身边",
