@@ -18,7 +18,7 @@
   "homepage": "https://github.com/leizongmin/programmer-calendar#readme",
   "dependencies": {
     "cli-color": "^1.1.0",
-    "lei-download": "^0.3.1"
+    "lei-download": "^1.0.2"
   },
   "engines": {
     "node": ">= 4.0.0"
