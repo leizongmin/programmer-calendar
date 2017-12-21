@@ -1,4 +1,6 @@
 # programmer-calendar
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/leizongmin/programmer-calendar.svg)](https://greenkeeper.io/)
 命令行版程序员老黄历
 
 ![image](https://cloud.githubusercontent.com/assets/841625/11815171/8687b8f6-a385-11e5-988f-82d540091eed.png)
